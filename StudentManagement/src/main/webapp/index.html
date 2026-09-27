@@ -1,19 +1,263 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Management System</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-	
-		<h1>Hello This is the Student Management System WebApp </h1>
-		
-		<p>here you can register and login </p>
-		
-		<a href="login.html"> login for student</a> <br>
-		<a href="/login"> login for admin</a> <br>
-		
-		<a href="register.html">register for student</a>
-	
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            <span>🎓</span> StudentMS
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#features">Features</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+            <!-- Login Menu -->
+            <li class="login-menu">
+                <a href="#">Login ▾</a>
+
+                <div class="dropdown">
+                    <a href="studentLogin.html">Student Login</a>
+                    <a href="adminLogin.html">Admin Login</a>
+                </div>
+            </li>
+
+            <li>
+                <a href="register.html" class="register-btn">
+                    Register
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">WELCOME TO OUR SYSTEM</p>
+
+            <h1>
+                Student Management
+                <span>Made Simple.</span>
+            </h1>
+
+            <p class="description">
+                A simple and efficient platform to manage student
+                information, academic records and student activities
+                in one place.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="register.html" class="primary-btn">
+                    Get Started →
+                </a>
+
+                <a href="#about" class="secondary-btn">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Right Side Illustration -->
+
+        <div class="hero-card">
+
+            <div class="card-icon">
+                🎓
+            </div>
+
+            <h2>Student Portal</h2>
+
+            <p>
+                Manage your academic journey
+                easily and securely.
+            </p>
+
+            <div class="mini-info">
+                <div>
+                    <strong>Easy</strong>
+                    <small>To Use</small>
+                </div>
+
+                <div>
+                    <strong>Secure</strong>
+                    <small>Access</small>
+                </div>
+
+                <div>
+                    <strong>Fast</strong>
+                    <small>Management</small>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+
+    <section class="about" id="about">
+
+        <div class="section-title">
+            <p>ABOUT SYSTEM</p>
+            <h2>Everything You Need in One Place</h2>
+        </div>
+
+        <div class="about-content">
+
+            <div>
+                <p>
+                    The Student Management System is designed to make
+                    managing student information easier and more
+                    organized.
+                </p>
+
+                <p>
+                    Students can register and access their accounts,
+                    while administrators can manage student records
+                    and other important information.
+                </p>
+            </div>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <h3>01</h3>
+                    <p>Student Registration</p>
+                </div>
+
+                <div class="stat">
+                    <h3>02</h3>
+                    <p>Secure Login</p>
+                </div>
+
+                <div class="stat">
+                    <h3>03</h3>
+                    <p>Record Management</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Features -->
+
+    <section class="features" id="features">
+
+        <div class="section-title">
+            <p>WHAT WE OFFER</p>
+            <h2>Simple & Useful Features</h2>
+        </div>
+
+
+        <div class="feature-container">
+
+            <div class="feature">
+                <div class="feature-icon">👨‍🎓</div>
+                <h3>Student Management</h3>
+                <p>
+                    Store and manage student information
+                    in an organized way.
+                </p>
+            </div>
+
+
+            <div class="feature">
+                <div class="feature-icon">🔐</div>
+                <h3>Secure Login</h3>
+                <p>
+                    Separate login access for students
+                    and administrators.
+                </p>
+            </div>
+
+
+            <div class="feature">
+                <div class="feature-icon">📋</div>
+                <h3>Academic Records</h3>
+                <p>
+                    Keep important student and academic
+                    records easily accessible.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <section class="contact" id="contact">
+
+        <h2>Have Questions?</h2>
+
+        <p>
+            Get in touch with us for more information
+            about the Student Management System.
+        </p>
+
+        <a href="mailto:admin@example.com">
+            Contact Administrator
+        </a>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🎓 StudentMS
+        </div>
+
+        <p>
+            Student Management System
+        </p>
+
+        <small>
+            © 2026 StudentMS. All rights reserved.
+        </small>
+
+    </footer>
+
 </body>
 </html>

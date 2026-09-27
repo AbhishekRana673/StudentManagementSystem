@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 
 import com.abhi.util.DBConnection;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -54,6 +55,8 @@ public class RegisterServlet extends HttpServlet {
 				int confirm = pstmt.executeUpdate();
 				if(confirm > 0) {
 					pw.println("Registered Successfully!");
+					RequestDispatcher rd = req.getRequestDispatcher("/registrationDone.html");
+					rd.forward(req, resp);
 				}
 				
 				

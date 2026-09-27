@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 
 import com.abhi.util.DBConnection;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -36,6 +37,8 @@ public class LoginServlet extends HttpServlet {
 			if(res.next() && email.equals(res.getString(1)) && pass.equals(res.getString(2))) {
 				if(res.getInt(3) == 1) {
 					pw.println("You are already login!");
+					RequestDispatcher rd = req.getRequestDispatcher("/StudentDashboard.html");
+					rd.forward(req, resp);
 					
 				}else{
 					String alterLogin = "UPDATE STUDENT3 SET ISLOGIN = 1 ";
@@ -43,7 +46,8 @@ public class LoginServlet extends HttpServlet {
 					pstmt.executeUpdate();
 					
 					pw.println("Login success!");
-					
+					RequestDispatcher rd = req.getRequestDispatcher("/StudentDashboard.html");
+					rd.forward(req, resp);
 				}
 				
 			}else {
