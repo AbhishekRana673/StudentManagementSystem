@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Registration Successful</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #eef4ff,
+                #f8faff
+            );
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: #26344d;
+        }
+
+
+        /* Success Card */
+
+        .success-card {
+            width: 420px;
+
+            background: white;
+
+            padding: 45px 40px;
+
+            text-align: center;
+
+            border-radius: 10px;
+
+            border: 1px solid #e1e6ee;
+
+            box-shadow: 0 12px 35px rgba(40, 60, 90, 0.12);
+        }
+
+
+        /* Success Icon */
+
+        .success-icon {
+            width: 70px;
+            height: 70px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #e8f7ed;
+
+            color: #2d8a4b;
+
+            border-radius: 50%;
+
+            font-size: 35px;
+        }
+
+
+        /* Heading */
+
+        h1 {
+            color: #263b64;
+
+            font-size: 27px;
+
+            margin-bottom: 12px;
+        }
+
+
+        /* Message */
+
+        p {
+            color: #737e90;
+
+            font-size: 15px;
+
+            line-height: 1.6;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* Login Button */
+
+        .login-btn {
+            display: inline-block;
+
+            text-decoration: none;
+
+            background: #315ca8;
+
+            color: white;
+
+            padding: 12px 25px;
+
+            border-radius: 5px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            transition: 0.2s;
+        }
+
+
+        .login-btn:hover {
+            background: #244985;
+        }
+
+
+        /* Home Link */
+
+        .home-link {
+            display: block;
+
+            margin-top: 18px;
+
+            text-decoration: none;
+
+            color: #315ca8;
+
+            font-size: 14px;
+        }
+
+
+        .home-link:hover {
+            text-decoration: underline;
+        }
+
+
+        /* Mobile */
+
+        @media (max-width: 500px) {
+
+            .success-card {
+                width: 90%;
+
+                padding: 35px 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="success-card">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+
+        <h1>Registration Successful!</h1>
+
+
+        <p>
+            Congratulations! Your student registration
+            has been completed successfully.
+        </p>
+
+
+        <a href="studentLogin.html" class="login-btn">
+            Login to Your Account
+        </a>
+
+
+        <a href="index.html" class="home-link">
+            ← Back to Home
+        </a>
+
+    </div>
+
+
+</body>
+
+</html>

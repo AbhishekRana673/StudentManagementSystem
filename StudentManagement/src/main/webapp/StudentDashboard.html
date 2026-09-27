@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Student Dashboard</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6fa;
+            color: #26344d;
+        }
+
+
+        /* =========================
+           SIDEBAR
+        ========================= */
+
+        .sidebar {
+            position: fixed;
+
+            left: 0;
+            top: 0;
+
+            width: 220px;
+            height: 100vh;
+
+            background-color: #263b64;
+
+            padding: 30px 20px;
+
+            color: white;
+        }
+
+        .logo {
+            text-align: center;
+
+            font-size: 21px;
+            font-weight: bold;
+
+            margin-bottom: 45px;
+        }
+
+        .logo span {
+            font-size: 26px;
+        }
+
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            display: block;
+
+            padding: 13px 15px;
+
+            color: #dce4f3;
+
+            text-decoration: none;
+
+            border-radius: 6px;
+
+            font-size: 14px;
+
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #315486;
+
+            color: white;
+        }
+
+
+        /* =========================
+           MAIN CONTENT
+        ========================= */
+
+        .main {
+            margin-left: 220px;
+
+            padding: 35px 45px;
+        }
+
+
+        /* =========================
+           TOP BAR
+        ========================= */
+
+        .topbar {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 35px;
+        }
+
+        .topbar h1 {
+            font-size: 28px;
+
+            color: #26344d;
+        }
+
+        .topbar p {
+            margin-top: 6px;
+
+            color: #7b8494;
+
+            font-size: 14px;
+        }
+
+        .profile {
+            background-color: white;
+
+            padding: 10px 16px;
+
+            border-radius: 6px;
+
+            border: 1px solid #e1e5ec;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           WELCOME CARD
+        ========================= */
+
+        .welcome {
+            background: linear-gradient(
+                120deg,
+                #315ca8,
+                #263b64
+            );
+
+            color: white;
+
+            padding: 30px 35px;
+
+            border-radius: 10px;
+
+            margin-bottom: 30px;
+
+            box-shadow: 0 8px 25px rgba(40, 60, 90, 0.12);
+        }
+
+        .welcome h2 {
+            font-size: 25px;
+
+            margin-bottom: 10px;
+        }
+
+        .welcome p {
+            color: #dce5f5;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           QUICK ACTIONS
+        ========================= */
+
+        .section-title {
+            margin-bottom: 18px;
+
+            font-size: 20px;
+
+            color: #26344d;
+        }
+
+        .cards {
+            display: flex;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: white;
+
+            width: 30%;
+
+            min-width: 190px;
+
+            padding: 25px;
+
+            border-radius: 8px;
+
+            border: 1px solid #e2e6ed;
+
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+
+            box-shadow: 0 8px 20px rgba(40, 60, 90, 0.10);
+        }
+
+        .card-icon {
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 17px;
+
+            margin-bottom: 8px;
+
+            color: #263b64;
+        }
+
+        .card p {
+            font-size: 13px;
+
+            color: #7a8494;
+
+            line-height: 1.5;
+
+            margin-bottom: 18px;
+        }
+
+        .card a {
+            text-decoration: none;
+
+            color: #315ca8;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+        .card a:hover {
+            color: #244985;
+        }
+
+
+        /* =========================
+           STUDENT INFORMATION
+        ========================= */
+
+        .info-section {
+            margin-top: 35px;
+
+            background-color: white;
+
+            padding: 25px;
+
+            border-radius: 8px;
+
+            border: 1px solid #e2e6ed;
+        }
+
+        .info-section h2 {
+            font-size: 19px;
+
+            margin-bottom: 20px;
+
+            color: #26344d;
+        }
+
+        .info {
+            display: flex;
+
+            gap: 50px;
+
+            flex-wrap: wrap;
+        }
+
+        .info div {
+            min-width: 150px;
+        }
+
+        .info small {
+            display: block;
+
+            color: #8992a1;
+
+            margin-bottom: 5px;
+        }
+
+        .info strong {
+            color: #344158;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            margin-top: 40px;
+
+            text-align: center;
+
+            color: #8992a1;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            .sidebar {
+                position: static;
+
+                width: 100%;
+
+                height: auto;
+            }
+
+            .sidebar ul {
+                display: flex;
+
+                justify-content: center;
+
+                gap: 5px;
+
+                flex-wrap: wrap;
+            }
+
+            .sidebar li {
+                margin: 0;
+            }
+
+            .main {
+                margin-left: 0;
+
+                padding: 25px 20px;
+            }
+
+            .cards {
+                flex-direction: column;
+            }
+
+            .card {
+                width: 100%;
+            }
+
+            .topbar {
+                align-items: flex-start;
+
+                gap: 15px;
+
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+            🎓 StudentMS
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="">🏠 Dashboard</a>
+            </li>
+
+            <li>
+                <a href="">👤 View Profile</a>
+            </li>
+
+            <li>
+                <a href="">✏️ Update Profile</a>
+            </li>
+
+            <li>
+                <a href="">🗑️ Delete Profile</a>
+            </li>
+
+            <li>
+                <a href="">🚪 Logout</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- Main Content -->
+
+    <div class="main">
+
+
+        <!-- Top Bar -->
+
+        <div class="topbar">
+
+            <div>
+                <h1>Student Dashboard</h1>
+
+                <p>
+                    Manage your student account from here.
+                </p>
+            </div>
+
+            <div class="profile">
+                👤 Student
+            </div>
+
+        </div>
+
+
+        <!-- Welcome -->
+
+        <div class="welcome">
+
+            <h2>Welcome Back! 👋</h2>
+
+            <p>
+                Good to see you again. You can view and manage
+                your profile information using the options below.
+            </p>
+
+        </div>
+
+
+        <!-- Quick Actions -->
+
+        <h2 class="section-title">
+            Quick Actions
+        </h2>
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    👤
+                </div>
+
+                <h3>View Profile</h3>
+
+                <p>
+                    View your personal and academic
+                    information.
+                </p>
+
+                <a href="">
+                    View Profile →
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    ✏️
+                </div>
+
+                <h3>Update Profile</h3>
+
+                <p>
+                    Update your personal information
+                    whenever required.
+                </p>
+
+                <a href="">
+                    Update Profile →
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🗑️
+                </div>
+
+                <h3>Delete Profile</h3>
+
+                <p>
+                    Remove your student profile from
+                    the system.
+                </p>
+
+                <a href="">
+                    Delete Profile →
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Student Information -->
+
+        <div class="info-section">
+
+            <h2>Student Information</h2>
+
+            <div class="info">
+
+                <div>
+                    <small>Name</small>
+                    <strong>Student Name</strong>
+                </div>
+
+                <div>
+                    <small>Email</small>
+                    <strong>student@email.com</strong>
+                </div>
+
+                <div>
+                    <small>Course</small>
+                    <strong>Computer Science</strong>
+                </div>
+
+                <div>
+                    <small>Status</small>
+                    <strong>Active</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <footer>
+            © 2026 Student Management System
+        </footer>
+
+
+    </div>
+
+
+</body>
+
+</html>
